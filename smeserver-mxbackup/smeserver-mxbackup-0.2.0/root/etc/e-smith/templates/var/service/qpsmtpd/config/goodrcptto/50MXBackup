@@ -1,0 +1,20 @@
+{
+    if ( ( $mxbackup{ status } || "disabled" ) eq "enabled" ) {
+        $OUT  = "\n# MX Backup entries start\n" ;
+	$OUT .= "# This is the list of the mail domains,\n" ;
+	$OUT .= "# from the MX-Backup configuration of the local system.\n" ;
+
+        my $MXFlag = 0 ;
+        my %MXValues = split /,/, ( $mxbackup{ name } || "" ) ;
+        foreach my $data ( sort { ( join ( "\.", reverse( split /\./, $a) ) )
+                       cmp
+                       ( join( "\.", reverse( split /\./, $b ) ) ) }
+		keys %MXValues ) {
+            $OUT .= "\@$data\n" ;
+            $MXFlag = 1 ;
+        }
+        $OUT .= "### No MX Backup set Now ...\n" if ( ! $MXFlag ) ;
+        $OUT .= "# MX Backup entries end\n\n" ;
+    }
+}
+

@@ -1,0 +1,195 @@
+<!-- vim: ft=xml:
+-->
+<lexicon lang="en-us">
+        <entry>
+            <base>FORM_TITLE</base>
+            <trans>Configuration de la fonction MX Backup</trans>
+        </entry>
+        <entry>
+            <base>FIRST_PAGE_DESCRIPTION</base>
+            <trans><![CDATA[
+                <p>
+		Par défaut, SME deteste vraiment servir de relais de messagerie.
+		Ceci veut dire que si une personne hors de vos réseaux locaux
+		envoie un mail à votre serveur SME pour un domaine que votre
+		serveur SME ne gère pas, ce mail sera rejeté.
+		</p><p>
+		Mais vous pouvez faire le choix d'être un serveur de messagerie
+		secondaire (ou MX Backup) pour certains autres domaines
+		ou ordinateurs sur Internet. Dans ce cas, vous devez configurer
+		les noms de domaines ou d'ordinateurs que vous souhaitez 
+		seconder.
+		</p><p>
+		Vous devez également indiquer si vous acceptez de seconder
+		un domaine entier avec ses sous domaines ou ordinateurs
+		(acceptez vous toutes les adresses de courrier sous
+		la forme <tt>ce_type@*.domaine.ami</tt> ) ou seulement un ordinateur
+		(Vous acceptez <tt>ce_type@domaine.ami</tt> mais pas 
+		<tt>celui_la@sous.domaine.ami</tt> )
+		</p>
+		<p>
+		Quelques points d'intérêts :
+		</p>
+		<p>
+		<ul>
+		<li>Ceci n'est qu'un point de la configuration. Votre SME
+		ne sera un serveur MX-Backup opérationnel que si les DNS des
+		domaines ou ordinateurs concernés sont bien configurés.
+		Il faut que votre serveur SME soit mentionné dans la liste 
+		des MX des domaines/ordinateurs à seconder, et avec un niveau de
+		priorité obligatoirement supérieur.
+		<li>Vous pouvez choisir de secourir un domaine ou un host, mais 
+		rappelez vous : vous n'avez aucun contrôle sur la boite aux lettres
+		(la partie à gauche de l'arobase @ dans l'adresse de messagerie )
+		</ul>
+		</p>
+                ]]>
+            </trans>
+        </entry>
+        <entry>
+            <base>BUTTON_LABEL_CREATE</base>
+            <trans>Créer une nouvelle règle de MX-Backup</trans>
+        </entry>
+        <entry>
+            <base>BUTTON_LABEL_START_SERVICE</base>
+            <trans>Activation du MX Backup</trans>
+        </entry>
+        <entry>
+            <base>SERVICE_RUNNING</base>
+            <trans>MX Backup est actif</trans>
+        </entry>
+        <entry>
+            <base>BUTTON_LABEL_STOP_SERVICE</base>
+            <trans>Désactivation du MX Backup</trans>
+        </entry>
+        <entry>
+            <base>SERVICE_STOPPED</base>
+            <trans>MX Backup est inactif</trans>
+        </entry>
+	<entry>
+            <base>SUMMARY_ADD_DESC</base>
+            <trans>Le tableau ci-après résume les règles de MX Backup que
+                vous êtes sur le point d'ajouter. Si ces règles vous conviennent,
+                cliquez sur le bouton &quot;Ajouter&quot;. Sinon, cliquez sur le
+                bouton &quot;Annuler&quot;.
+            </trans>
+        </entry>
+        <entry>
+            <base>SUMMARY_REMOVE_DESC</base>
+            <trans>Le tableau ci-après résume les règles de MX Backup que
+                vous êtes sur le point de supprimer. Si vous voulez effectivement
+                retirer la règle, cliquez sur le bouton &quot;Supprimer&quot;.
+                Sinon, cliquez sur le bouton &quot;Annuler&quot;.
+            </trans>
+        </entry>
+        <entry>
+            <base>SHOW_MXBACKUP</base>
+            <trans>
+		Vous trouvez ici un tableau résumant les règles de
+		gestion du MX Backup actuellement présentes sur cet
+		ordinateur. Cliquez sur le lien nommé &quot;Supprimer&quot;
+		pour supprimer la règle correspondante.
+	    </trans>
+        </entry>
+        <entry>
+            <base>NO_MXBACKUP</base>
+            <trans>Il n'y a actuellement aucune règle de &quot;MX Backup&quot;
+		définie sur ce système.</trans>
+        </entry>
+        <entry>
+            <base>CREATE_PAGE_DESCRIPTION</base>
+            <trans><![CDATA[
+		<p>
+		Saisissez le nom du domaine pour lequel vous allez être
+		serveur de messagerie secondaire.
+		Indiquez si vous acceptez le domaine et les machines du 
+		domaine en sélectionnant 'Domaine'. C'est le choix à prendre
+		si vous hésitez.
+		Si vous ne souhaitez pas accepter les mails pour les sous
+		domaines ou les ordinateurs du domaine principal, choisissez
+		'Ordinateur'.
+		</p>
+                ]]>
+            </trans>
+        </entry>
+        <entry>
+            <base>DOMAIN</base>
+            <trans>Domaine</trans>
+        </entry>
+        <entry>
+            <base>HOST</base>
+            <trans>Ordinateur</trans>
+        </entry>
+        <entry>
+            <base>LABEL_NAME</base>
+            <trans>Nom Internet</trans>
+        </entry>
+        <entry>
+            <base>LABEL_HOST_DOMAIN</base>
+            <trans>Domaine ou Ordinateur</trans>
+        </entry>
+        <entry>
+            <base>Configuration</base>
+            <trans>Configuration</trans>
+        </entry>
+        <entry>
+            <base>MX-Backup</base>
+            <trans>Configuration du MX Backup</trans>
+        </entry>
+        <entry>
+            <base>SAVE</base>
+            <trans>Sauvegarder</trans>
+        </entry>
+        <entry>
+            <base>APPLY</base>
+            <trans>Ajouter</trans>
+        </entry>
+        <entry>
+            <base>NEXT</base>
+            <trans>Suivant</trans>
+        </entry>
+        <entry>
+            <base>CANCEL</base>
+            <trans>Annuler</trans>
+        </entry>
+        <entry>
+            <base>SUCCESS</base>
+            <trans>Votre changement de la configuration du MX Backup a bien
+            été sauvegardé.
+            </trans>
+        </entry>
+        <entry>
+            <base>REMOVE</base>
+            <trans>Supprimer</trans>
+        </entry>
+        <entry>
+            <base>ERR_NO_MXBACKUP_RECORD</base>
+            <trans>Impossible de lire l'enregistrement &quot;mxbackup&quot; dans
+            la base de configuration.</trans>
+        </entry>
+        <entry>
+            <base>ERR_UNSUPPORTED_MODE</base>
+            <trans>Mode non supporté.</trans>
+        </entry>
+        <entry>
+            <base>ERR_BADNAME</base>
+            <trans>Le nom que vous avez saisi ne semble pas être un nom de domaine valide.
+	    Le nom ne peut contenir que des lettres, des chiffres et le signe moins &quot;-&quot; .
+	    Le nom peut contenir entre 1 et 4 points &quot;.&quot; (mais pas au début ni à la fin).
+	    La dernière partie du nom, entre le dernier point et la fin du nom (le tld)
+	    ne peut contenir que des lettres, et doit compter entre deux et cinq caractères.
+	    </trans>
+        </entry>
+        <entry>
+            <base>ACTION</base>
+            <trans>Action</trans>
+        </entry>
+        <entry>
+            <base>ENABLED</base>
+            <trans>ACTIF</trans>
+        </entry>
+        <entry>
+            <base>DISABLED</base>
+            <trans>DESACTIVE</trans>
+        </entry>
+</lexicon>

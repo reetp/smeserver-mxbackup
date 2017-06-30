@@ -1,0 +1,25 @@
+{
+    # vim: ft=perl ts=4 sw=4 et:
+    if ( ( $mxbackup{ status } || "disabled" ) eq "enabled" ) {
+	$OUT  = "# Following is a list of systems or domains.\n" ;
+	$OUT .= "# This system is configured to act as a MX Backup for theses\n" ;
+	$OUT .= "# systems (if there's only one line) or domains. If there is a\n" ;
+	$OUT .= "# line beginning with a dot, then this system accept mails for\n" ;
+	$OUT .= "# any hosts of this domain\n" ;
+	$OUT .= "# MX Backup start\n" ;
+
+	my $MXFlag = 0 ;
+	my %MXValues = split /,/, ( $mxbackup{ name } || "" ) ;
+    foreach my $data ( sort { ( join ( "\.", reverse( split /\./, $a) ) )
+                              cmp
+                              ( join( "\.", reverse( split /\./, $b ) ) ) 
+                            }
+                       keys %MXValues ) {
+	    $OUT .= "$data\n" ;
+	    $OUT .= ".$data\n" if ( $MXValues{ $data } ) ;
+	    $MXFlag = 1 ;
+	}
+	$OUT .= "### No MX Backup set Now ...\n" if ( ! $MXFlag ) ;
+	$OUT .= "# MX Backup end\n" ;
+    }
+}

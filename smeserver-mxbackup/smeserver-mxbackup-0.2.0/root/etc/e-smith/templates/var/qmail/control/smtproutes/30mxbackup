@@ -1,0 +1,37 @@
+{
+    # vim: ft=perl ts=4 sw=4 et:
+    $OUT = "";
+
+    # ------------------------------------------------
+    # if mxbackup is enabled, we have to check if 
+    # there a 'smart host'. If yes, the smart host
+    # should not be used for all 'MX-Backuped' domains.
+    # ------------------------------------------------
+
+    if ( ( $mxbackup{ status } || "disabled" ) eq "enabled" ) 
+    {
+
+        #--------------------------------------------------
+        # Now check for SMTP smart host
+        #--------------------------------------------------
+
+        if (
+    	    $SMTPSmartHost
+    	    &&
+    	    ($SMTPSmartHost ne 'off')
+    	    &&
+    	    ($SMTPSmartHost !~ /^\s*$/)
+    	)
+        {
+	        my %MXValues = split /,/, ( $mxbackup{ name } || "" ) ;
+        	foreach my $data ( sort { ( join ( "\.", reverse( split /\./, $a) ) )
+                                      cmp
+                                      ( join( "\.", reverse( split /\./, $b ) ) ) }
+                               keys %MXValues ) {
+	            $OUT .= "$data:\n" ;
+        	    $OUT .= ".$data:\n" if ( $MXValues{ $data } ) ;
+            }
+        }
+    }
+    chomp ($OUT);
+}

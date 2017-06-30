@@ -1,0 +1,108 @@
+#!/usr/bin/perl -wT
+# vim: ft=xml ts=4 sw=4 et:
+#----------------------------------------------------------------------
+# heading     : Configuration
+# description : MX-Backup
+# navigation  : 6000 6710
+#----------------------------------------------------------------------
+#----------------------------------------------------------------------
+# copyright (C) 2004 Schirrm's Studio
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+#----------------------------------------------------------------------
+
+use strict;
+use esmith::FormMagick::Panel::mxbackup;
+my $form = esmith::FormMagick::Panel::mxbackup->new();
+# Uncomment the next line for debugging purposes.
+# $form->debug(1);
+$form->display();
+
+
+__DATA__
+<form 
+    title="FORM_TITLE" 
+    header="/etc/e-smith/web/common/head.tmpl"
+    footer="/etc/e-smith/web/common/foot.tmpl">
+
+    <!-- page 0 -->
+    <page 
+        name="Front"
+        pre-event="print_status_message()">
+        <description>FIRST_PAGE_DESCRIPTION</description>
+
+        <subroutine src="show_mx_backup()" />
+    </page>
+
+    <!-- page 1 -->
+    <page
+        name="Create"
+        pre-event="print_status_message()">
+        <description>CREATE_PAGE_DESCRIPTION</description>
+
+        <field
+            id="name"
+            type="text"
+            size="35"
+            validation="validate_name()">
+            <label>LABEL_NAME</label>
+        </field>
+        <field
+            id="host_domain"
+            type="select"
+            options="'HOST','DOMAIN'">
+            <label>LABEL_HOST_DOMAIN</label>
+        </field>
+
+        <subroutine src="print_button('NEXT')" />
+
+    </page>
+
+    <!-- page 2 -->
+    <page
+        name="ShowSummary"
+        pre-event="turn_off_buttons()"
+        post-event="create_new()">
+
+        <subroutine src="display_summary_create" />
+    </page>
+
+    <!-- page 3 
+        Note: This page is not used. It's a kludge to permit the next page
+        to work properly from a link on the front page. FormMagick needs
+        work. 
+    -->
+    <page
+        name="Dummy">
+    </page>
+
+    <!-- page 4 -->
+    <page
+        name="Remove"
+        pre-event="turn_off_buttons()"
+        post-event="remove_rule()">
+
+        <subroutine src="display_summary_remove" />
+    </page>
+
+    <!-- page 5 
+         This is only a wrapper to start a sub, and then go direct back
+         to the front page.
+    -->
+    <page
+        name="Service"
+        post-event="mxbackup_enable_disable">
+    </page>
+</form>

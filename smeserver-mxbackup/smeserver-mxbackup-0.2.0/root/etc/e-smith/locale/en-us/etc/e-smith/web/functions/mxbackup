@@ -1,0 +1,184 @@
+<!-- vim: ft=xml:
+-->
+<lexicon lang="en-us">
+        <entry>
+            <base>FORM_TITLE</base>
+            <trans>Configure the MX Backup function</trans>
+        </entry>
+        <entry>
+            <base>FIRST_PAGE_DESCRIPTION</base>
+            <trans><![CDATA[
+                <p>
+		By default, SME really hate to be a mail relay. This means
+		that, if someone outside your local(s) network(s) 
+		try to send to your SME box a mail for 
+		a domain that is not owned by this SME box, the mail is
+		rejected.</p>
+		<p>
+		But you can choose to be a second mail server (or MX Backup)
+		for some others
+		hosts or domains. In this case, you have to set the
+		domains or hosts names that you plan to backup.
+		You have also to say if you accept only one precise host
+		( you accept mail address like <tt>this_guy@bar.foo</tt> 
+		but you won't accept <tt>this_other@big.bar.foo</tt>)
+		or one complete domain with all
+		subdomain (mail address in form <tt>this_guy@*.bar.foo</tt>)
+		</p>
+		<p>
+		Some point of interest :
+		</p>
+		<p>
+		<ul>
+		<li>This is only one part of the configuration. This will 
+		only work if the DNS of the domains you plan to backup are
+		correctly set (that is : your server should be a MX with a 
+		priority higher than the 'real' MX server)
+		<li>You can choose between a domain and a host, but remember :
+		You cannot choose the mailbox ( The left part of the E-Mail address )
+		</ul>
+		</p>
+                ]]>
+            </trans>
+        </entry>
+        <entry>
+            <base>BUTTON_LABEL_CREATE</base>
+            <trans>Create a new MX-Backup rule</trans>
+        </entry>
+        <entry>
+            <base>BUTTON_LABEL_START_SERVICE</base>
+            <trans>Enable MX Backup</trans>
+        </entry>
+        <entry>
+            <base>SERVICE_RUNNING</base>
+            <trans>MX Backup is Enabled</trans>
+        </entry>
+        <entry>
+            <base>BUTTON_LABEL_STOP_SERVICE</base>
+            <trans>Disable MX Backup</trans>
+        </entry>
+        <entry>
+            <base>SERVICE_STOPPED</base>
+            <trans>MX Backup is Disabled</trans>
+        </entry>
+        <entry>
+            <base>SUMMARY_ADD_DESC</base>
+            <trans>The following table summarizes the MX Backup rule
+                that you are about to add. If you are satisfied with the rule,
+                click the &quot;Add&quot; button. If you are not, click the
+                &quot;Cancel&quot; button.
+            </trans>
+        </entry>
+        <entry>
+            <base>SUMMARY_REMOVE_DESC</base>
+            <trans>The following table summarizes the MX Backup rule
+                that you are about to remove. If you are sure you want to 
+                remove the rule, click the &quot;Remove&quot; button. If not,
+                click the &quot;Cancel&quot; button.
+            </trans>
+        </entry>
+        <entry>
+            <base>SHOW_MXBACKUP</base>
+            <trans>
+		Below you will find a table summarizing the current
+                mx-backup rules installed on this server. Click on the
+                &quot;Remove&quot; link to remove the corresponding rule.
+	    </trans>
+        </entry>
+        <entry>
+            <base>NO_MXBACKUP</base>
+            <trans>There are currently no 'MX Backuped' hosts or domains on the system.</trans>
+        </entry>
+        <entry>
+            <base>CREATE_PAGE_DESCRIPTION</base>
+            <trans><![CDATA[
+		<p>
+		Set the domain name or host name you plan to 'MX Backup'.
+		If you plan to backup an entire domain select 'Domain'.
+		If you're unsure, this is the most sensible choice.
+		If you only want to act as a MX Backup for one host (and
+		no others hosts that could be sub-domains of this host) then
+		select 'Host'.
+		</p>
+                ]]>
+            </trans>
+        </entry>
+        <entry>
+            <base>DOMAIN</base>
+            <trans>Domain</trans>
+        </entry>
+        <entry>
+            <base>HOST</base>
+            <trans>Host</trans>
+        </entry>
+        <entry>
+            <base>LABEL_NAME</base>
+            <trans>Internet Name</trans>
+        </entry>
+        <entry>
+            <base>LABEL_HOST_DOMAIN</base>
+            <trans>HOST or DOMAIN</trans>
+        </entry>
+        <entry>
+            <base>Configuration</base>
+            <trans>Configuration</trans>
+        </entry>
+        <entry>
+            <base>MX-Backup</base>
+            <trans>MX Backup Configuration</trans>
+        </entry>
+        <entry>
+            <base>SAVE</base>
+            <trans>Save</trans>
+        </entry>
+        <entry>
+            <base>APPLY</base>
+            <trans>Add</trans>
+        </entry>
+        <entry>
+            <base>NEXT</base>
+            <trans>Next</trans>
+        </entry>
+        <entry>
+            <base>CANCEL</base>
+            <trans>Cancel</trans>
+        </entry>
+        <entry>
+            <base>SUCCESS</base>
+            <trans>Your change to the MX Backup configuration has been
+            successfully saved.
+            </trans>
+        </entry>
+        <entry>
+            <base>REMOVE</base>
+            <trans>Remove</trans>
+        </entry>
+        <entry>
+            <base>ERR_NO_MXBACKUP_RECORD</base>
+            <trans>Cannot retrieve mxbackup record from the mxbackup
+            database.</trans>
+        </entry>
+        <entry>
+            <base>ERR_UNSUPPORTED_MODE</base>
+            <trans>Unsupported mode.</trans>
+        </entry>
+        <entry>
+            <base>ERR_BADNAME</base>
+            <trans>The name you gave don't seems to be a valid Internet 
+            Name.The name should only contain uppercase, lowercase, numbers and the '-' digit.
+	    The name should contain between 1 and 4 dot. The last word (the tld) can only contains letters and
+	    it shoult have a least 2 characters, but not more than 5.</trans>
+        </entry>
+        <entry>
+            <base>ACTION</base>
+            <trans>Action</trans>
+        </entry>
+        <entry>
+            <base>ENABLED</base>
+            <trans>ENABLED</trans>
+        </entry>
+        <entry>
+            <base>DISABLED</base>
+            <trans>DISABLED</trans>
+        </entry>
+</lexicon>
