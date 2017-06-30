@@ -1,7 +1,7 @@
 Summary: MX Backup configuration panel for SME Server
 %define name smeserver-mxbackup
 Name: %{name}
-%define version 0.2.0
+%define version 0.2
 %define release 1
 Version: %{version}
 Release: %{release}
