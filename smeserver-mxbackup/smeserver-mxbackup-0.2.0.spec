@@ -15,7 +15,7 @@ BuildRoot: /var/tmp/%{name}-%{version}-%{release}-buildroot
 BuildRequires: e-smith-devtools
 BuildArchitectures: noarch
 Requires: smeserver-release >= 9
-Requires: e-smith-email >= 5.4.08
+Requires: e-smith-email >= 5.4.0
 Requires: e-smith-formmagick >= 2.4.0
 Requires: e-smith-base
 Requires: e-smith-qmail >= 2.4.0
