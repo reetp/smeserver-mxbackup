@@ -4,7 +4,7 @@ Name: %{name}
 %define version 0.2
 %define release 2
 Version: %{version}
-Release: %{release}%{?dist}
+Release: %{release}
 License: GPL
 Group: Networking/Daemons
 Source: %{name}-%{version}.tar.gz
