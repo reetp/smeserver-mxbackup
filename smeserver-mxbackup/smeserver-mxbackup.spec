@@ -2,9 +2,9 @@ Summary: MX Backup configuration panel for SME Server
 %define name smeserver-mxbackup
 Name: %{name}
 %define version 0.2
-%define release 1
+%define release 2
 Version: %{version}
-Release: %{release}
+Release: %{release}%{?dist}
 License: GPL
 Group: Networking/Daemons
 Source: %{name}-%{version}.tar.gz
@@ -25,7 +25,11 @@ AutoReqProv: no
 Adds a MX Backup Configuration panel to the SME server-manager.
 
 %changelog
-* Fri Jun 30 2017 John Crisp <jcrisp@safeandsoundit.co.uk>
+* Tue Mar 26 2019 John Crisp <jcrisp@safeandsoundit.co.uk> 0.2-2.sme
+- Updated readme
+- Comment out debugging in pm file
+
+* Fri Jun 30 2017 John Crisp <jcrisp@safeandsoundit.co.uk> 0.2-1.sme
 - Updating for v9
 - Dropped the UTF-8
 - Modify the vendor_perl directory
