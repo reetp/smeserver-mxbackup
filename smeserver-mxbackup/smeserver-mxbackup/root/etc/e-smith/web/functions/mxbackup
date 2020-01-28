@@ -80,7 +80,7 @@ __DATA__
     </page>
 
     <!-- page 3 
-        Note: This page is not used. It's a kludge to permit the next page
+        Note: This page is not used. It is a kludge to permit the next page
         to work properly from a link on the front page. FormMagick needs
         work. 
     -->
